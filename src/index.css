@@ -1,0 +1,13 @@
+*{
+margin:0
+}
+
+body {
+--slackColor:#4A154B;
+overflow: hidden;
+font-family: 'Open Sans', sans-serif;
+}
+/* p
+{
+    color:rgba(128, 128, 128, 0.76);
+} */
