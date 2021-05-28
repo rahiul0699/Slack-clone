@@ -1,12 +1,12 @@
-import React, { createRef, useEffect, useRef, useState } from 'react'
+import React, { createRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {useSelector} from 'react-redux'
+
 import {db} from '../../firebase'
 const Chats = ({channelId}) => {
-    const channel=useSelector(state=>state.channel)
+    
     const bottomRef=createRef()
     const [messageList,setMessageList]=useState()
-console.log("[Chats.js]",channelId)
+// console.log("[Chats.js]",channelId)
     useEffect(()=>{
       
       db.collection('channels').doc(channelId).collection('messages').orderBy('timestamp','asc')
@@ -30,18 +30,18 @@ console.log("[Chats.js]",channelId)
       
     },[channelId])
   useEffect(()=>{
-    console.log("here")
+    // console.log("here")
     bottomRef.current.scrollIntoView({
         behavior:"smooth",
     })
   })
-    console.log("[Chats.js]",messageList)
+    // console.log("[Chats.js]",messageList)
     return (
         <Wrapper >
 
             {
                 messageList?.map(message=>{
-                    return <MessageContainer>
+                    return <MessageContainer key={message.id}>
                         <img src={message.userImage} alt="UserImage"/>
                         <Message>
                         <h4>{message.userName} <span> {message.timestamp?.toDate().toUTCString()}</span></h4>
@@ -87,10 +87,7 @@ p {
     font-weight:500;
 }
 `
-const Message=styled. div`
-  
-
-`
+const Message=styled.div``
 const ChatBottom=styled.div ` 
 padding-bottom:200px;
 `

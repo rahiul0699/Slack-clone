@@ -7,7 +7,7 @@ import Chats from './Chats'
 import {useSelector} from 'react-redux'
 const ChatWindow = () => {
     const channel = useSelector(state => state.channel)
-     console.log("Chnnael->",channel)
+    //  console.log("Chnnael->",channel)
     return (
 
      channel?.name?<Wrapper>

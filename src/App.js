@@ -31,7 +31,7 @@ auth.onAuthStateChanged((user)=>{
 
 
 
-  },[])
+  },[dispatch])
   let app=null
   if(loading)
   {

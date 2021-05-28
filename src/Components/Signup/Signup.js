@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux'
 const Signup = () => {
     const dispatch = useDispatch()
     const signinHandler=()=>{
-        auth .signInWithPopup(provider)
+        auth.signInWithPopup(provider)
         .then((result) => {
         let user=result.user
         dispatch(login(
